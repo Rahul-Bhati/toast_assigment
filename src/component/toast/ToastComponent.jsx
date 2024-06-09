@@ -28,23 +28,3 @@ const ToastComponent = ({ onConfirm }) => {
 };
 
 export default ToastComponent;
-
-// write test for above mention code (ToastComponent.jsx)
-// Path: src/component/toast/ToastComponent.test.jsx
-// Compare this snippet from src/App.test.js:
-// import { render, screen } from '@testing-library/react';
-// import App from './App';
-// 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
-// import { render, screen } from '@testing-library/react';
-// import ToastComponent from './ToastComponent';
-
-// test('renders toast component', () => {
-//   render(<ToastComponent />);
-//   const toastElement = screen.getByText(/This is a toast message/i);
-//   expect(toastElement).toBeInTheDocument();
-// });

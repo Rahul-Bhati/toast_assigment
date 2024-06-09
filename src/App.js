@@ -33,30 +33,3 @@ const App = () => {
 }
 export default App;
 
-// import { useState } from "react";
-// import { ToastComponent } from "./component/";
-
-// function App() {
-//   const [display, setDisplay] = useState(0);
-//   const displayBlock = () => {
-//     setDisplay(!display);
-//   }
-//   return (
-//     <>
-//       <div className=""></div>
-//       {display ? (
-//         <ToastComponent />
-//       ) : (
-//           <div style={{margin:"20%"}} ><center>
-//             <button style={{ color: "white", background: "blue", width: "300px", fontSize: "30px" }} onClick={displayBlock}>Click Me!</button>
-//           </center>
-//           </div>
-//       )}
-
-      
-//     </>
-//   );
-// }
-
-// export default App;
-
