@@ -1,0 +1,114 @@
+.App {
+     display: flex;
+     flex-direction: column;
+     /* text-align: center; */
+     /* align-content: center; */
+     justify-content: center;
+     height: 80vh;
+     margin-left: 20%;
+     /* align-items: center; */
+}
+
+.App-header {
+     Width: 990.5px;
+     Height: 156px;
+     display: flex;
+     flex-direction: column;
+     align-items: left;
+     /* justify-content: space-between; */
+     font-size: calc(10px + 2vmin);
+     /* border: 1px solid black; */
+}
+
+.App-header p {
+     font-size: 20px;
+}
+
+.side_wise {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: start;
+     text-align: start;
+}
+
+.App-header h1 {
+     display: contents;
+}
+
+.App-header img {
+     float: right;
+}
+
+.App-header p {
+     display: flex;
+     float: left;
+}
+
+.toast_button {
+     background: #712CF9;
+     color: white;
+     border-radius: 8px;
+     Width: 420px;
+     Height: 134px;
+     Padding: 16px;
+     Gap: 8px;
+     float: left;
+     margin-top: 80px;
+     display: flex;
+     justify-content: center;
+}
+
+.toast_button .light {
+     margin-right: 7px;
+}
+
+.toast_button .close {
+     float: right;
+}
+
+button {
+     margin-right: 10px;
+     padding: 5px 8px;
+     border-radius: 6px;
+     background-color: transparent;
+     color: white;
+     border: none;
+     font-size: 17px;
+}
+
+.btn {
+     background-color: rgb(237, 242, 245);
+     border: .5px solid rgb(79, 155, 187);
+     color: black;
+     font-weight: 600;
+}
+
+.btn:hover {
+     background-color: #6437be;
+     color: white;
+     z-index: -2;
+     font-weight: 600;
+     border: #6437be;
+     transition: 1ms ease-out;
+}
+
+.cancel:hover {
+     text-decoration: underline;
+}
+
+.toast_button .buttons {}
+
+.App-link {
+     color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+     from {
+          transform: rotate(0deg);
+     }
+
+     to {
+          transform: rotate(360deg);
+     }
+}
