@@ -1,3 +1,11 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background: #8c8383; */
+}
+
 .click-me{
   color: white;
   background: #6437be;
@@ -18,3 +26,5 @@ toast-root{
   transform: translateX(calc(0% - 30px));
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.25, 1.35);
 }
+
+/*  */
