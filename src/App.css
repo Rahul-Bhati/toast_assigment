@@ -28,3 +28,106 @@ toast-root{
 }
 
 /*  */
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  /* padding: 15px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  display: flex;
+  /* flex-direction: row-reverse; */
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  color: #fff;
+
+  font-size: 16px;
+}
+
+.toast-close{
+  cursor: pointer;
+  align-self: flex-start;
+  align-content: flex-start;
+  /* padding: 10px; */
+}
+
+.toast-success {
+  /* background-color: #dff0d8; */
+  background: #55B938;
+}
+
+.toast-error {
+  /* background-color: #f2dede; */
+  background: #D65745;
+}
+
+.toast-info {
+  /* background-color: #d9edf7; */
+  background: #5296D5;
+}
+
+.toast-warning {
+  /* background-color: #fcf8e3; */
+  background: #EAC645;
+}
+
+.toast .toast-body button {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  /* flex-basis: ; */
+}
+
+.toast img {
+  max-width: 9%;
+  height: auto;
+  /* border-radius: 5px; */
+  padding-top: 3px;
+}
+
+.toast .toast-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 17px;
+}
+
+.filter-white{
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7492%) hue-rotate(22deg) brightness(111%) contrast(95%);
+}
+
+.toast-detail{
+  margin: 0;
+  padding: 0;
+}
+
+.toast-detail p{
+  font-size: 13px;
+}
+
+.colored {
+  accent-color: red;
+}
+progress::-webkit-progress-bar {
+  background: transparent;
+}
+
+#myProgress {
+  /* width: 100%; */
+  /* background-color: grey; */
+}
+
+/* #myBar */
+.progress-bar {
+  width: 1%;
+  height: 5px;
+  background-color: rgb(255, 255, 255);
+}
