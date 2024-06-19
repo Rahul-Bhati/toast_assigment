@@ -29,6 +29,8 @@ const App = () => {
 
         showToast();
     } 
+
+    console.log(isOpen)
     
     return (
         <div className='center'>          

@@ -8,10 +8,20 @@
 
 .click-me{
   color: white;
-  background: #6437be;
-  width: 300px;
-  font-size: 30px;
+  background: #7155a8;
+  width: 200px;
+  font-size: 20px;
   border-radius: 32px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.click-me:hover{
+  background: #5f18d0;
+  transition: all 0.5s;
+  /* on haver on button annimation  */
+  
+  transform: scale(1.1);
 }
 
 .center{

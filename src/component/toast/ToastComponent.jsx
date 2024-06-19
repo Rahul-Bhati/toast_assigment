@@ -57,7 +57,7 @@ const ToastComponent = ({ onClose, isOpen, variant, timer, toastData }) => {
   useEffect(() => {
     let intervalId;
 
-    if (isOpen && !isHovering) {
+    if (isOpen && !isHovering && timer) {
       setProgress(0); // Reset progress on open
       intervalId = setInterval(() => {
         setProgress((oldProgress) => {
@@ -83,6 +83,16 @@ const ToastComponent = ({ onClose, isOpen, variant, timer, toastData }) => {
 
   if (!isOpen) return null;
 
+  const handleClose = () => {
+    setProgress(0); // Finish progress animation
+    // setTimeout(() => setProgress(0), 300); // Reset progress after animation
+    setIsHovering(false);
+     
+    onClose();
+  }
+
+  // console.log(isOpen, onClose); 
+
   return (
     <div
       className={`toast toast-${variant}`}
@@ -105,7 +115,7 @@ const ToastComponent = ({ onClose, isOpen, variant, timer, toastData }) => {
             {children}
           </div>
         </div>
-        <button onClick={onClose} className="toast-close">
+        <button onClick={handleClose} className="toast-close">
           x
         </button>
         {/* adding progress bar that is depend on timer */}
