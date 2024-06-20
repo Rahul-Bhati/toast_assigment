@@ -1,28 +1,3 @@
-// import React from 'react';
-// import './ToastComponent.css';
-
-// const ToastComponent = (props) => {
-//   const { onConfirm, toastDetail } = props;
-
-//   return (
-//     <div className="toast-container" >
-//       <div className="toast" style={{background:"white" , color:"black"}}>
-//         <div className="toast-header">
-//           <button className="toast-close" onClick={onConfirm}>
-//             X
-//           </button>
-//         </div>
-//         <div className="toast-body">
-//           <img src="check.svg" alt={toastDetail.img} className={`filter-${toastDetail.bg}`}/>
-//           <p>{toastDetail.text}</p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ToastComponent;
-
 import React, { useEffect, useState } from "react";
 
 const ToastComponent = ({ onClose, isOpen, variant, timer, toastData }) => {
@@ -85,13 +60,10 @@ const ToastComponent = ({ onClose, isOpen, variant, timer, toastData }) => {
 
   const handleClose = () => {
     setProgress(0); // Finish progress animation
-    // setTimeout(() => setProgress(0), 300); // Reset progress after animation
     setIsHovering(false);
      
     onClose();
   }
-
-  // console.log(isOpen, onClose); 
 
   return (
     <div
@@ -108,7 +80,7 @@ const ToastComponent = ({ onClose, isOpen, variant, timer, toastData }) => {
             gap: "10px",
           }}
         >
-          {img && <img src={img} alt={title} className="filter-white" />}
+          <img src={img} alt={title} className="filter-white" />
           <div className="toast-detail">
             <strong>{title}</strong>
             <p>{details}</p>
@@ -118,10 +90,6 @@ const ToastComponent = ({ onClose, isOpen, variant, timer, toastData }) => {
         <button onClick={handleClose} className="toast-close">
           x
         </button>
-        {/* adding progress bar that is depend on timer */}
-        {/* {timer && (
-          <div className='toast-progress' style={{ animationDuration: `${timer}ms` }} />
-        )} */}
       </div>
       <div className="progress-bar" style={{ width: `${progress}%` }}></div>
     </div>
@@ -129,34 +97,3 @@ const ToastComponent = ({ onClose, isOpen, variant, timer, toastData }) => {
 };
 
 export default ToastComponent;
-
-// import React from 'react';
-// import './ToastComponent.css';
-
-// const ToastComponent = ({ onConfirm }) => {
-//   return (
-//     <div className="toast-container">
-//       <div className="toast">
-//         <div className="toast-header">
-//           <h3 className="toast-title">Title</h3>
-//           <button className="toast-close" onClick={onConfirm}>
-//             X
-//           </button>
-//         </div>
-//         <div className="toast-body">
-//           <p>This is a toast message</p>
-//         </div>
-//         <div className="toast-footer">
-//           <button className="confirm-button" onClick={onConfirm}>
-//             Confirm
-//           </button>
-//           <button className="toast-button" onClick={onConfirm}>
-//             Cancel
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ToastComponent;
