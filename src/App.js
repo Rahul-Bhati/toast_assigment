@@ -8,12 +8,6 @@ const App = () => {
 
   const [variant, setVariant] = useState("");
 
-//   let toastData = {
-//     title: "",
-//     details: "",
-//     children: null,
-//   };
-
   // Function to open the toast
   const showToast = () => setToastOpen(true);
 
@@ -31,27 +25,18 @@ const App = () => {
 
   return (
     <div className="center">
-      {/* <ToastComponent
-        isOpen={isOpen}
-        onClose={closeToast}
-        variant={variant}
-        timer={15000} // Toast will close after 5 seconds
-        toastData={toastData}
-      /> */}
       {createPortal(
         <ToastComponent
           isOpen={isOpen}
           onClose={closeToast}
           variant={variant}
-          timer={15000} // Toast will close after 5 seconds
-        //   toastData={toastData}
+          timer={5000} // Toast will close after 5 seconds
         />,
         document.querySelector("#toast-root")
       )}
       <button className="click-me" onClick={handleToast}>
         Click me
       </button>
-      {/* <div id="toast-root"></div> */}
     </div>
   );
 };
