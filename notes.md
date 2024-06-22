@@ -305,3 +305,51 @@ A) Here are some common pitfalls to avoid when using the useEffect hook in React
 	4. Including functions in the dependency list: If you include a function in the dependency list, make sure it's defined outside the component or memoized with useCallback, otherwise it will be recreated on every render and cause the effect to run unnecessarily.
 
 	5. Blocking the rendering with heavy computations: Remember that useEffect runs after every render. If you put a heavy computation inside useEffect, it might block the browser and make your app unresponsive.
+
+---------------------------------------------
+'s how you can modify the component to include image preloading:
+
+1. Import useEffect: Ensure useEffect is imported from react if not already.
+2. Preload Images: Inside the useEffect hook, create new Image objects for each of the images and set their src attribute to the image paths. This will trigger the browser to preload these images.
+
+```
+const preloadImage = (src) => {
+  const image = new Image();
+  image.src = src;
+};
+
+// Preload images based on variant
+useEffect(() => {
+	preloadImage("check.svg");
+	preloadImage("error.svg");
+	preloadImage("info.svg");
+	preloadImage("warning.svg");
+}, []);
+
+```
+---------------------------------------------------------
+How can I optimize the loading time of images in my React component?
+
+1. To optimize the loading time of images in your React component, consider the following strategies:
+
+2. Lazy Loading: Load images only when they are needed or about to come into the viewport. This can significantly reduce initial load time.
+
+3. Image Preloading: For critical images that are essential for the initial user experience, continue using the preloading strategy as you've done. However, ensure it's done selectively to avoid unnecessary network requests.
+
+4. Use Image CDN: Utilize an Image Content Delivery Network (CDN) that can serve optimized images based on the user's device and network conditions.
+
+5. Image Compression and Optimization: Ensure images are compressed and optimized without significant loss of quality. Tools like ImageOptim, TinyPNG, or Squoosh can be used for this purpose.
+
+6. Responsive Images: Use different image sizes for different screen sizes and resolutions. The srcset attribute in <img> tags can be used for this purpose.
+
+7. WebP Format: Consider using WebP format for images, as it provides superior lossless and lossy compression for images on the web.
+
+8. Avoid Inline Base64 Images: While embedding small images as Base64 strings directly in your code can reduce HTTP requests, it increases the size of your HTML/JS files. Use this technique sparingly.
+
+9. Cache Images: Utilize HTTP caching headers to ensure that browsers cache images for subsequent visits.
+
+10. Use SVGs for Icons and Simple Images: SVGs are often smaller than bitmap formats and can scale without losing quality.
+
+11. Prioritize Loading: Identify critical images that need to be loaded first and defer others.
+
+Implementing these strategies can significantly improve the loading time and performance of images in your React component.
