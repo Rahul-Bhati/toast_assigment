@@ -114,6 +114,13 @@ toast-root{
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7492%) hue-rotate(22deg) brightness(111%) contrast(95%);
 }
 
+.toast-content{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
 .toast-detail{
   margin: 0;
   padding: 0;
