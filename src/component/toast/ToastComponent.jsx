@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { ReactComponent as Info } from './assets/info.svg';
+import { ReactComponent as Warning } from './assets/warning.svg';
+import { ReactComponent as Error } from './assets/error.svg';
+import { ReactComponent as Check } from './assets/check.svg';
 
 const ToastComponent = ({ onClose, isOpen, variant, timer }) => {
   const [progress, setProgress] = useState(0);
@@ -40,18 +44,19 @@ const ToastComponent = ({ onClose, isOpen, variant, timer }) => {
   // const getImagePath = (variant) => `${variant}.svg`;
 
   // Define image paths based on variant
+  console.log(variant , typeof variant);
   const getImagePath = (variant) => {
     switch (variant) {
       case "success":
-        return "check.svg";
+        return <Check className="filter-white"/>;
       case "error":
-        return "error.svg";
+        return <Error className="filter-white"/>;
       case "info":
-        return "info.svg";
+        return <Info className="filter-white"/>;
       case "warning":
-        return "warning.svg";
+        return <Warning className="filter-white"/>;
       default:
-        return "logo192.png"; // A default placeholder
+        return "./assets/Logomark.png"; // A default placeholder
     }
   };
 
@@ -63,11 +68,7 @@ const ToastComponent = ({ onClose, isOpen, variant, timer }) => {
     >
       <div className="toast-body">
         <div className="toast-content">
-          <img
-            src={getImagePath(variant)}
-            alt={variantData[variant].title}
-            className="filter-white"
-          />
+          {getImagePath(variant)}
           <div className="toast-detail">
             <strong>{variantData[variant].title}</strong>
             <p>{variantData[variant].details}</p>
