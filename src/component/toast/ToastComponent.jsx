@@ -30,9 +30,7 @@ const ToastComponent = ({ onClose, isOpen, variant, timer }) => {
 
   const handleMouseEnter = () => setIsHovering(true);
   const handleMouseLeave = () => setIsHovering(false);
-  const handleClose = () => {
-    onClose();
-  };
+  const handleClose = () => onClose();
 
   const variantData = {
     success: { title: "Success", details: "This is a success message" },
@@ -41,24 +39,12 @@ const ToastComponent = ({ onClose, isOpen, variant, timer }) => {
     warning: { title: "Warning", details: "This is a warning message" },
   };
 
-  // const getImagePath = (variant) => `${variant}.svg`;
-
-  // Define image paths based on variant
-  console.log(variant , typeof variant);
-  const getImagePath = (variant) => {
-    switch (variant) {
-      case "success":
-        return <Check className="filter-white"/>;
-      case "error":
-        return <Error className="filter-white"/>;
-      case "info":
-        return <Info className="filter-white"/>;
-      case "warning":
-        return <Warning className="filter-white"/>;
-      default:
-        return "./assets/Logomark.png"; // A default placeholder
-    }
-  };
+  const VariantIcon = {
+    success: <Check className="filter-white"/>,
+    error: <Error className="filter-white"/>,
+    info: <Info className="filter-white"/>,
+    warning: <Warning className="filter-white"/>
+  }[variant];
 
   return (
     <div
@@ -68,7 +54,8 @@ const ToastComponent = ({ onClose, isOpen, variant, timer }) => {
     >
       <div className="toast-body">
         <div className="toast-content">
-          {getImagePath(variant)}
+          {/* {getImagePath(variant)} */}
+          {VariantIcon}
           <div className="toast-detail">
             <strong>{variantData[variant].title}</strong>
             <p>{variantData[variant].details}</p>

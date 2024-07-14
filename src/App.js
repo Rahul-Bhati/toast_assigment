@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ToastComponent } from "./component";
 import "./App.css";
+import { createPortal } from "react-dom";
 
 const App = () => {
   const [isOpen, setToastOpen] = useState(false);
@@ -14,14 +15,17 @@ const App = () => {
 
   return (
     <div className="center">
-      {isOpen && (
-        <ToastComponent
-          isOpen={isOpen}
-          onClose={() => setToastOpen(false)}
-          variant={variant}
-          timer={5000} // Toast will close after 5 seconds
-        />
-      )}
+      {isOpen &&
+        createPortal(
+          <ToastComponent
+            isOpen={isOpen}
+            onClose={() => setToastOpen(false)}
+            variant={variant}
+            timer={15000}
+          />,
+          document.querySelector("#toast-root")
+        )}
+
       <button className="click-me" onClick={handleToast}>
         Click me
       </button>
